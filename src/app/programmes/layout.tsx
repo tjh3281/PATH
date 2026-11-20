@@ -11,7 +11,8 @@ const TABS: FolderTab[] = PROGRAMMES.map((programme) => ({
 
 export default function ProgrammesLayout({ children }: LayoutProps<"/programmes">) {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 pt-4 pb-16 sm:pt-6">
+    // 72rem of content plus the 1rem gutters, so the folder's edges line up with the menu bar's.
+    <main className="mx-auto w-full max-w-[74rem] px-4 pt-4 pb-16 sm:pt-6">
       <ProgrammeFolder tabs={TABS}>{children}</ProgrammeFolder>
     </main>
   );

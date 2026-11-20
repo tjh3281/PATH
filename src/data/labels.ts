@@ -24,16 +24,9 @@ export const LABELS: Label[] = [
   },
   {
     id: "data",
-    name: "Data & Analytics",
-    description: "Turning data into insight",
+    name: "Data & Databases",
+    description: "Storing, managing and analysing data",
     color: "#0891b2",
-    kind: "subject",
-  },
-  {
-    id: "databases",
-    name: "Databases",
-    description: "Storing and managing data",
-    color: "#0d9488",
     kind: "subject",
   },
   {

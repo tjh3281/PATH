@@ -41,7 +41,7 @@ export const COURSES: Course[] = [
     primary: "media",
     secondary: ["design"],
   },
-  { code: "WIA2001", name: "Database", credits: 3, primary: "databases" },
+  { code: "WIA2001", name: "Database", credits: 3, primary: "data" },
   {
     code: "WIA2002",
     name: "Software Modelling",
@@ -309,7 +309,7 @@ export const COURSES: Course[] = [
     name: "Open-Source Programming: Application and Technology",
     credits: 3,
     primary: "web-mobile",
-    secondary: ["programming", "databases"],
+    secondary: ["programming", "data"],
   },
   {
     code: "WIE2003",
@@ -325,7 +325,7 @@ export const COURSES: Course[] = [
     primary: "data",
     secondary: ["web-mobile"],
   },
-  { code: "WIE3001", name: "Advanced Database", credits: 3, primary: "databases" },
+  { code: "WIE3001", name: "Advanced Database", credits: 3, primary: "data" },
   {
     code: "WIE3002",
     name: "Electronic Commerce",
@@ -359,7 +359,6 @@ export const COURSES: Course[] = [
     name: "Data Mining and Warehousing",
     credits: 3,
     primary: "data",
-    secondary: ["databases"],
   },
   {
     code: "WIE3010",

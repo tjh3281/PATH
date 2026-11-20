@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import { AiEmblem } from "@/components/programmes/ai-emblem";
+import { StudyTimeline } from "@/components/programmes/study-timeline";
 import { TopicExplorer } from "@/components/programmes/topic-explorer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getProgramme, PROGRAMME_SLUGS } from "@/data/programmes";
 import { programmeProfile } from "@/lib/programme-profile";
+import { electiveOptions, studyPlan } from "@/lib/study-plan";
 
 export function generateStaticParams() {
   return PROGRAMME_SLUGS.map((slug) => ({ slug }));
@@ -74,8 +76,8 @@ async function ProgrammeOverview({ params }: Pick<PageProps<"/programmes/[slug]"
         {programme.slug === "ai" ? (
           // Out of the layout flow so its size never makes the hero taller; the empty box
           // beside the text reserves its width.
-          <div className="hidden w-56 shrink-0 self-stretch lg:block">
-            <AiEmblem className="absolute top-1/2 right-0 size-60 -translate-y-1/2" />
+          <div className="hidden w-40 shrink-0 self-stretch lg:block">
+            <AiEmblem className="absolute top-1/2 right-0 size-44 -translate-y-1/2" />
           </div>
         ) : (
           <span
@@ -93,11 +95,22 @@ async function ProgrammeOverview({ params }: Pick<PageProps<"/programmes/[slug]"
         )}
       </header>
 
-      <div className="mt-6 rounded-[1.5rem] border border-white/80 bg-gradient-to-br from-white/70 to-white/35 p-5 shadow-[inset_0_1px_0_rgb(255_255_255),0_12px_32px_-18px_rgb(76_29_149/0.35)] backdrop-blur-md sm:p-6">
-        <h2 className="font-heading text-xl font-semibold tracking-tight">What you’ll study</h2>
+      <div className="mt-6 rounded-[1.5rem] border border-white/80 bg-gradient-to-br from-white/75 to-white/40 p-5 shadow-[inset_0_1px_0_rgb(255_255_255),0_12px_32px_-18px_rgb(76_29_149/0.35)] backdrop-blur-md sm:p-6">
+        <h2 className="font-heading text-xl leading-7 font-semibold tracking-[-0.015em]">
+          What you’ll study
+        </h2>
         <div className="mt-5">
           <TopicExplorer total={total} slices={slices} />
         </div>
+      </div>
+
+      <div className="mt-6">
+        <StudyTimeline
+          slug={programme.slug}
+          plan={studyPlan(programme)}
+          options={electiveOptions(programme)}
+          color={color}
+        />
       </div>
     </section>
   );

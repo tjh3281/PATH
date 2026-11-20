@@ -97,7 +97,7 @@ src/
       ai-emblem.tsx            Animated AI header emblem
     ui/                        shadcn/ui primitives
   data/
-    labels.ts                  The 15 topic labels
+    labels.ts                  The 14 topic labels
     courses.ts                 99 course records
     course-summaries.ts        One-line description per course
     programmes.ts              The six programmes and their courses
@@ -115,12 +115,12 @@ All course data comes from the **FCSIT Undergraduate Programme Handbook, session
 
 - **Programmes** link to their faculty core, programme core and elective courses. Five programmes share an 11-course core and each adds 3 core courses of its own. Data Science has its own core and faculty electives.
 - **Courses** store code, name, credits and topic labels (one primary label, up to two secondary).
-- **Labels** group courses by topic. There are 13 subject labels and 2 general ones.
+- **Labels** group courses by topic. There are 12 subject labels and 2 general ones.
 
-| Kind    | Labels                                                                                                                                                                                                  |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Subject | AI & ML, Programming, Math & Stats, Data & Analytics, Databases, Software Engineering, Web & Mobile, Networking, Cybersecurity, Systems & Hardware, Graphics, Media & Games, Design & UX, Business & IS |
-| General | Projects & Industry, University & Soft Skills                                                                                                                                                           |
+| Kind    | Labels                                                                                                                                                                                       |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Subject | AI & ML, Programming, Math & Stats, Data & Databases, Software Engineering, Web & Mobile, Networking, Cybersecurity, Systems & Hardware, Graphics, Media & Games, Design & UX, Business & IS |
+| General | Projects & Industry, University & Soft Skills                                                                                                                                                |
 
 General labels cover courses every programme takes, such as industrial training and university courses. The topic breakdown leaves them out so the differences between programmes stay visible.
 

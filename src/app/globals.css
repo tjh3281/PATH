@@ -235,8 +235,10 @@
 }
 
 /* Topic donut: the ring sweeps in clockwise once when a programme opens. */
+/* The dash is slightly longer than the circle, so its two ends overlap once the sweep
+   finishes; an exact fit leaves a hairline seam where they meet. */
 .donut-sweep {
-  stroke-dasharray: 1;
+  stroke-dasharray: 1.02;
   stroke-dashoffset: 0;
 }
 
@@ -253,7 +255,8 @@
     animation-delay: calc(1.05s + var(--i) * 70ms);
   }
   .topic-hint-chevron {
-    /* No fill mode: the arrow already rests hidden, and a held end frame would keep it hidden on hover. */
+    /* No fill mode, and the keyframes have no start or end frame: the arrow eases out of its
+       resting look and back, so a held frame can never override the hover state. */
     animation: topic-hint-peek 1.1s ease-in-out;
     animation-delay: calc(1.05s + var(--i) * 70ms);
   }
@@ -286,15 +289,10 @@
 }
 
 @keyframes topic-hint-peek {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateX(-4px);
-  }
-  35%,
-  65% {
-    opacity: 0.8;
-    transform: translateX(0);
+  40%,
+  60% {
+    opacity: 1;
+    transform: translateX(3px);
   }
 }
 
@@ -310,7 +308,7 @@
 
 @keyframes donut-sweep {
   from {
-    stroke-dashoffset: 1;
+    stroke-dashoffset: 1.02;
   }
 }
 

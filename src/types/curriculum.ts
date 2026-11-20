@@ -2,7 +2,6 @@ export type LabelId =
   | "programming"
   | "math"
   | "data"
-  | "databases"
   | "ai"
   | "software-eng"
   | "web-mobile"
@@ -30,6 +29,22 @@ export type Course = {
   credits: number;
   primary: LabelId;
   secondary?: LabelId[];
+};
+
+/** One entry in a semester of the handbook's course plan. */
+export type PlanItem =
+  | { kind: "course"; code: string }
+  /** Elective slots: the plan fixes how many, the student picks which (each 3 credits). */
+  | { kind: "electives"; pool: "specialization" | "faculty"; count: number }
+  /** University-wide course with no faculty course code (English, co-curriculum, SHE…). */
+  | { kind: "university"; name: string; credits: number };
+
+export type PlanSemester = {
+  year: 1 | 2 | 3 | 4;
+  semester: 1 | 2;
+  /** Semester spent working in industry. */
+  industry?: boolean;
+  items: PlanItem[];
 };
 
 export type ProgrammeSlug = "ai" | "se" | "csn" | "ds" | "is" | "mm";

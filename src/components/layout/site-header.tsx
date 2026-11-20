@@ -47,7 +47,9 @@ export function SiteHeader() {
         <nav
           aria-label="Main"
           className={cn(
-            "flex h-16 items-center gap-1 rounded-[1.25rem] pr-2.5 pl-3 transition-[background,box-shadow,backdrop-filter] duration-300 sm:pl-4",
+            // Insets match each end's control height (40px logo tile, 44px button) so both sit
+            // the same distance from the bar's edge on all three sides.
+            "flex h-16 items-center gap-1 rounded-[1.25rem] pr-2.5 pl-3 transition-[background,box-shadow,backdrop-filter] duration-300",
             scrolled || menuOpen ? "glass-frosted" : "glass",
           )}
         >
